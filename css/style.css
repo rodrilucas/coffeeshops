@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+
+:root {
+  --primaria-700: #2f1b04;
+  --secundaria-600: hsl(36, 92%, 70%);
+
+  --secundaria-300: hsl(34, 100%, 92%);
+  --secundaria-100: hsl(32, 100%, 97%);
+  --secundaria-50: hsl(32, 100%, 98%);
+
+  --secundaria-hover: hsl(36, 92%, 60%);
+
+  --white-900: hsl(100, 100%, 100%);
+  --gray-100: hsl(0, 0%, 74%);
+  --gray-400: hsl(0, 0%, 44%);
+  --black-700: hsl(0, 0%, 12%);
+
+  --font-w100: 100;
+  --font-w200: 200;
+  --font-w300: 300;
+  --font-w400: 400;
+  --font-w500: 500;
+  --font-w600: 600;
+  --font-w700: 700;
+  --font-w800: 800;
+
+  --font-family-pd: "Playfair Display", serif;
+  --font-family-cs: "Clicker Script", cursive;
+  --font-family-os: "Lora", serif;
+
+  --padding-025: 0.25em;
+  --padding-05: 0.5em;
+  --padding-075: 0.75em;
+  --padding-1: 1em;
+  --padding5735: 5.375em;
+
+  --gap-1: 1rem;
+  --gap-2: 2rem;
+  --gap-3: 3rem;
+}
