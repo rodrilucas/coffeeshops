@@ -80,17 +80,6 @@ button {
   margin: 2em 0;
 }
 
-.cabecalho-gradiente {
-  min-width: 100%;
-  position: absolute;
-  z-index: -1;
-  background: linear-gradient(
-    89.87deg,
-    hsla(0, 0%, 10%, 0.8) 65.42%,
-    hsla(0, 0%, 0%, 0) 101.09%
-  );
-}
-
 .cabecalho-lista {
   padding: 0 var(--padding5735);
 }
@@ -285,4 +274,52 @@ button {
 .cabecalho-lista__input::placeholder {
   font-weight: var(--font-w400);
   color: var(--gray-100);
+}
+
+/* Seção 1 */
+
+.sobre-nos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--padding5735);
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.sobre-nos__descricao {
+  width: 40%;
+  min-width: 30%;
+  color: var(--primaria-700);
+  display: grid;
+  gap: 1rem;
+  padding: 1em 0;
+}
+
+.sobre-nos__descricao,
+.sobre-nos__xicara {
+  z-index: 1;
+}
+
+.sobre-nos__descricao button {
+  width: max-content;
+}
+
+.sobre-nos__descricao h2 {
+  font-weight: var(--font-w800);
+  font-size: 3rem;
+}
+
+.sobre-nos__descricao p {
+  font-weight: var(--font-w300);
+}
+
+.sobre-nos__xicara {
+  width: 500px;
+  min-width: 40%;
+}
+
+.sobre-nos__xicara img {
+  width: 100%;
+  height: 100%;
 }
