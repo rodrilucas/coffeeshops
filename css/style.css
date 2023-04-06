@@ -10,11 +10,12 @@
 
   --secundaria-300: hsl(34, 100%, 92%);
   --secundaria-100: hsl(32, 100%, 97%);
-  --secundaria-50: hsl(32, 100%, 98%);
+  --secundaria-50: hsl(32, 100%, 9%);
 
   --secundaria-hover: hsl(36, 92%, 60%);
 
   --white-900: hsl(100, 100%, 100%);
+  --gray-50: hsl(0, 0%, 97%);
   --gray-100: hsl(0, 0%, 74%);
   --gray-400: hsl(0, 0%, 44%);
   --black-700: hsl(0, 0%, 12%);
@@ -36,6 +37,8 @@
   --padding-05: 0.5em;
   --padding-075: 0.75em;
   --padding-1: 1em;
+  --padding-2: 2em;
+  --padding-3: 3em;
   --padding5735: 5.375em;
 
   --gap-05: 0.5rem;
@@ -51,6 +54,10 @@
 body {
   font-family: var(--font-family-os);
   font-size: 1rem;
+}
+
+main > * {
+    margin: 10rem 0;
 }
 
 button {
@@ -293,7 +300,6 @@ button {
 .sobre-nos__descricao {
   width: 40%;
   min-width: 30%;
-  color: var(--primaria-700);
   display: grid;
   gap: var(--gap-1);
   padding: 1em 0;
@@ -332,18 +338,20 @@ button {
 .meu-cafe__informacoes {
   display: grid;
   grid-template-areas:
-    "ponteum ponteum ponteum"
     "lupa copo carteira"
     "ondaum copo ondadois"
-    "cafe copo numero"
-    "pontedois pontedois pontedois";
+    "cafe copo numero";
   grid-auto-columns: 1fr;
   width: 100%;
-  padding: 0 var(--padding5735);
+  padding: var(--padding-3) var(--padding5735);
   gap: var(--gap-2);
 }
 
 /* Área dos grids */
+
+.meu-cafe__informacoes div {
+  box-shadow: 0 0 0 4 #000;
+}
 
 .meu-cafe__informacoes div:nth-child(1) {
   grid-area: lupa;
@@ -365,14 +373,6 @@ button {
   grid-area: copo;
 }
 
-.meu-cafe__vetor-ponteum {
-  grid-area: ponteum;
-}
-
-.meu-cafe__vetor-pontedois {
-  grid-area: pontedois;
-}
-
 .meu-cafe__vetor-ondaum {
   grid-area: ondaum;
 }
@@ -389,33 +389,10 @@ button {
 }
 
 .meu-cafe__informacoes div h3 {
-  color: hsl(32, 83%, 10%);
   font-weight: var(--font-w700);
   font-size: 2rem;
   line-height: 1.2;
 }
-
-.meu-cafe__vetor-ponteum,
-.meu-cafe__vetor-pontedois {
-  display: inline-flex;
-  height: 51px;
-  margin: 0 auto;
-}
-
-.meu-cafe__vetor-ponteum::before,
-.meu-cafe__vetor-pontedois::before {
-  content: "";
-  width: 862px;
-}
-
-.meu-cafe__vetor-ponteum::before {
-  background-image: url("../img/utils/arco1-secao2.svg");
-}
-
-.meu-cafe__vetor-pontedois::before {
-  background-image: url("../img/utils/arco2-secao2.svg");
-}
-
 .meu-cafe__vetor-ondaum,
 .meu-cafe__vetor-ondadois {
   display: inline-flex;
@@ -462,4 +439,75 @@ button {
 
 .meu-cafe__informacoes-cafe {
   flex-direction: column;
+}
+
+/* Seção 3 menu */
+
+.menu-precos {
+  display: grid;
+  grid-template-areas:
+    "nome nome nome"
+    "imagemum menucafe imagemdois"
+    "menucappuccino imagemtres menuexpresso";
+  grid-auto-columns: 1fr;
+  width: 100%;
+  padding: 0 var(--padding5735);
+  gap: var(--gap-3);
+}
+
+.menu picture {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-precos__imagem:nth-of-type(1) {
+  grid-area: imagemum;
+}
+.menu-precos__imagem:nth-of-type(2) {
+  grid-area: imagemdois;
+}
+.menu-precos__imagem:nth-of-type(3) {
+  grid-area: imagetres;
+}
+
+.menu-precos h2 {
+  grid-area: nome;
+  font-size: 2rem;
+}
+
+.menu h3 {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: 0.16em;
+}
+
+.menu-precos__informacoes-total p {
+  font-weight: var(--font-w300);
+  color: hsl(0, 0%, 73%);
+}
+
+.menu-precos__informacoes-total span {
+  font-weight: var(--font-w500);
+  color: var(--secundaria-600);
+}
+
+.menu-precos__informacoes,
+.menu-precos__informacoes-total div {
+  display: flex;
+}
+
+.menu-precos__informacoes {
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-1);
+  padding: 0 5em;
+}
+
+.menu-precos__informacoes-total {
+  width: 100%;
+}
+
+.menu-precos__informacoes-total div {
+  justify-content: space-between;
 }
