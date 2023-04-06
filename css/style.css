@@ -440,15 +440,15 @@ button {
 
 .meu-cafe__informacoes div > span::before {
   content: "";
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 66px;
 }
 
 .meu-cafe__informacoes-icone__lupa::before {
   background-image: url("../img/icones/coracao.svg");
 }
 .meu-cafe__informacoes-icone__carteira::before {
-  background-image: url("../img/icones/carteira.svg");
+  background-image: url("../img/icones/preco.svg");
 }
 .meu-cafe__informacoes-icone__cafe::before {
   background-image: url("../img/icones/xicaracafe.svg");
