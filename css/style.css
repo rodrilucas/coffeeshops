@@ -38,9 +38,12 @@
   --padding-1: 1em;
   --padding5735: 5.375em;
 
+  --gap-05: 0.5rem;
   --gap-1: 1rem;
+  --gap-15: 1.5rem;
   --gap-2: 2rem;
   --gap-3: 3rem;
+  --gap-4: 4rem;
 }
 
 /* Utils */
@@ -98,7 +101,7 @@ button {
   font-weight: var(--font-w500);
   color: var(--secundaria-600);
   display: inline-flex;
-  gap: 1rem;
+  gap: var(--gap-1);
 }
 
 .cabecalho-lista__nome-principal h1::before {
@@ -114,7 +117,7 @@ button {
 
 .cabecalho-lista__links {
   display: inline-flex;
-  gap: 1rem;
+  gap: var(--gap-1);
 }
 
 .cabecalho-lista__links a {
@@ -140,7 +143,7 @@ button {
 
 .cabecalho-descricao {
   display: grid;
-  gap: 1rem;
+  gap: var(--gap-1);
   color: var(--white-900);
   width: 750px;
   padding: 2.4em var(--padding5735);
@@ -191,18 +194,18 @@ button {
   flex-direction: column;
   align-items: center;
   color: var(--white-900);
-  gap: 1.5rem;
+  gap: var(--gap-15);
 }
 
 .cabecalho-informacoes__gerais {
-  gap: 3rem;
+  gap: var(--gap-3);
 }
 
 .cabecalho-informacoes__gerais > * {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--gap-05);
   font-size: 1.22rem;
 }
 
@@ -292,7 +295,7 @@ button {
   min-width: 30%;
   color: var(--primaria-700);
   display: grid;
-  gap: 1rem;
+  gap: var(--gap-1);
   padding: 1em 0;
 }
 
@@ -337,7 +340,7 @@ button {
   grid-auto-columns: 1fr;
   width: 100%;
   padding: 0 var(--padding5735);
-  gap: 2rem;
+  gap: var(--gap-2);
 }
 
 /* Área dos grids */
@@ -382,7 +385,7 @@ button {
 
 .meu-cafe__informacoes div {
   display: flex;
-  gap: 1rem;
+  gap: var(--gap-1);
 }
 
 .meu-cafe__informacoes div h3 {
