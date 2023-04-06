@@ -42,3 +42,247 @@
   --gap-2: 2rem;
   --gap-3: 3rem;
 }
+
+/* Utils */
+
+body {
+  font-family: var(--font-family-os);
+  font-size: 1rem;
+}
+
+button {
+  padding: var(--padding-05) var(--padding-05);
+  background-color: var(--secundaria-600);
+  color: var(--black-700);
+  border: none;
+  border-radius: 0.5em;
+  font-weight: var(--font-w800);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.cabecalho,
+.cabecalho-gradiente {
+  width: 100%;
+  height: 100%;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-image: url("../img/icones/images/header_imagem.png");
+  z-index: 0;
+}
+
+.cabecalho-navegacao,
+.cabecalho-descricao {
+  margin: 2em 0;
+}
+
+.cabecalho-gradiente {
+  min-width: 100%;
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(
+    89.87deg,
+    hsla(0, 0%, 10%, 0.8) 65.42%,
+    hsla(0, 0%, 0%, 0) 101.09%
+  );
+}
+
+.cabecalho-lista {
+  padding: 0 var(--padding5735);
+}
+
+.cabecalho-navegacao {
+  width: 100%;
+  color: var(--white-900);
+}
+
+.cabecalho-lista {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cabecalho-lista__nome-principal h1 {
+  font-weight: var(--font-w500);
+  color: var(--secundaria-600);
+  display: inline-flex;
+  gap: 1rem;
+}
+
+.cabecalho-lista__nome-principal h1::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/icones/cafe.svg");
+}
+
+.cabecalho-lista > * {
+  list-style: none;
+}
+
+.cabecalho-lista__links {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+.cabecalho-lista__links a {
+  position: relative;
+  text-decoration: none;
+  color: var(--white-900);
+}
+
+.cabecalho-lista__links a:before {
+  content: "";
+  border-bottom: solid 3px var(--secundaria-600);
+  transform: scaleX(0);
+  transition: transform 250ms ease;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0.25em;
+}
+
+.cabecalho-lista__links a:hover::before {
+  transform: scaleX(1);
+}
+
+.cabecalho-descricao {
+  display: grid;
+  gap: 1rem;
+  color: var(--white-900);
+  width: 750px;
+  padding: 2.4em var(--padding5735);
+}
+
+.cabecalho-descricao > * {
+  font-style: normal;
+  letter-spacing: 0.08em;
+}
+
+.cabecalho-descricao button {
+  width: max-content;
+}
+
+.cabecalho-lista__procurar button {
+  padding: 0.2em 0.5em;
+  font-size: 0.85rem;
+  font-weight: var(--font-w500);
+}
+
+.cabecalho-descricao button:is(:active, :hover),
+.cabecalho-informacoes button:is(:active, :hover) {
+  transition: background 2s ease;
+  background-color: var(--secundaria-hover);
+}
+
+.cabecalho-descricao h2 {
+  font-family: var(--font-family-cs);
+  font-weight: var(--font-w500);
+  font-size: 8rem;
+  line-height: 140px;
+  color: var(--secundaria-600);
+}
+
+.cabecalho-descricao p {
+  line-height: 35px;
+  font-weight: var(--font-w400);
+  font-size: 1.25rem;
+}
+
+.cabecalho-informacoes,
+.cabecalho-informacoes__gerais,
+.cabecalho-lista__procurar label {
+  display: flex;
+}
+
+.cabecalho-informacoes {
+  flex-direction: column;
+  align-items: center;
+  color: var(--white-900);
+  gap: 1.5rem;
+}
+
+.cabecalho-informacoes__gerais {
+  gap: 3rem;
+}
+
+.cabecalho-informacoes__gerais > * {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.22rem;
+}
+
+.cabecalho-informacoes__gerais > *::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+}
+
+.icone-telefone::before {
+  background-image: url("../img/icones/telefone.svg");
+}
+
+.icone-email::before {
+  background-image: url("../img/icones/mensagem.svg");
+}
+
+.icone-endereco::before {
+  background-image: url("../img/icones/endereco.svg");
+}
+
+.cabecalho-lista__procurar label {
+  align-items: center;
+  position: relative;
+}
+
+.cabecalho-lista__buscar {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.cabecalho-lista__icone {
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0.5em;
+}
+
+.cabecalho-lista__icone::before {
+  content: "";
+  background-image: url("../img/icones/buscar.svg");
+  width: 24px;
+  height: 24px;
+}
+
+.cabecalho-lista__input {
+  border-radius: 0.25em;
+  width: 250px;
+  padding: 0.2em 3.5em;
+  outline: none;
+  background-color: transparent;
+  color: var(--secondary-700);
+  border: none;
+}
+
+.cabecalho-lista__input:focus {
+  opacity: 1;
+}
+
+.cabecalho-lista__input::placeholder {
+  font-weight: var(--font-w400);
+  color: var(--gray-100);
+}
