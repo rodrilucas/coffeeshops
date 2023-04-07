@@ -54,10 +54,12 @@
 body {
   font-family: var(--font-family-os);
   font-size: 1rem;
+  background-image: url("../img/images/background.png");
+  background-repeat: no-repeat;
 }
 
 main > * {
-    margin: 10rem 0;
+  margin: 4rem 0;
 }
 
 button {
@@ -295,6 +297,7 @@ button {
   padding: 0 var(--padding5735);
   flex-wrap: wrap;
   position: relative;
+  margin: 0;
 }
 
 .sobre-nos__descricao {
@@ -335,83 +338,75 @@ button {
 
 /* Seção 2 informações sobre os cafés */
 
+.meu-cafe {
+  margin: 0;
+}
+
 .meu-cafe__informacoes {
   display: grid;
   grid-template-areas:
-    "lupa copo carteira"
-    "ondaum copo ondadois"
-    "cafe copo numero";
+    "principal principal principal"
+    "sacocafe copo potecafe"
+    "cappuccino copo moedora"
+    "maquina copo cafegelado";
   grid-auto-columns: 1fr;
   width: 100%;
-  padding: var(--padding-3) var(--padding5735);
-  gap: var(--gap-2);
+  height: max-content;
+  padding: var(--padding-1) var(--padding5735);
+  gap: var(--gap-4);
 }
 
 /* Área dos grids */
 
-.meu-cafe__informacoes div {
-  box-shadow: 0 0 0 4 #000;
+.meu-cafe__informacoes-nomeprincipal {
+  font-size: 3rem;
+  font-weight: var(--font-w800);
+  padding: 0 var(--padding-2);
 }
 
 .meu-cafe__informacoes div:nth-child(1) {
-  grid-area: lupa;
+  grid-area: sacocafe;
 }
 
 .meu-cafe__informacoes div:nth-child(2) {
-  grid-area: carteira;
+  grid-area: potecafe;
 }
 
 .meu-cafe__informacoes div:nth-child(3) {
-  grid-area: cafe;
+  grid-area: cappuccino;
 }
 
 .meu-cafe__informacoes div:nth-child(4) {
-  grid-area: numero;
+  grid-area: moedora;
+}
+
+.meu-cafe__informacoes div:nth-child(5) {
+  grid-area: maquina;
+}
+
+.meu-cafe__informacoes div:nth-child(6) {
+  grid-area: cafegelado;
 }
 
 .meu-cafe__copo {
   grid-area: copo;
+  height: 80%;
 }
 
-.meu-cafe__vetor-ondaum {
-  grid-area: ondaum;
-}
-
-.meu-cafe__vetor-ondadois {
-  grid-area: ondadois;
+.meu-cafe__copo img {
+  margin: 0 auto;
 }
 
 /*  */
 
 .meu-cafe__informacoes div {
   display: flex;
-  gap: var(--gap-1);
+  column-gap: var(--gap-2);
 }
 
 .meu-cafe__informacoes div h3 {
-  font-weight: var(--font-w700);
-  font-size: 2rem;
-  line-height: 1.2;
-}
-.meu-cafe__vetor-ondaum,
-.meu-cafe__vetor-ondadois {
-  display: inline-flex;
-  justify-content: center;
-  height: 162px;
-}
-
-.meu-cafe__vetor-ondaum::before,
-.meu-cafe__vetor-ondadois::before {
-  content: "";
-  width: 31px;
-}
-
-.meu-cafe__vetor-ondaum::before {
-  background-image: url("../img/utils/corda1-secao2.svg");
-}
-
-.meu-cafe__vetor-ondadois::before {
-  background-image: url("../img/utils/corda2-secao2.svg");
+  font-weight: var(--font-w800);
+  font-size: 1.75rem;
 }
 
 .meu-cafe__informacoes div > span {
@@ -420,21 +415,32 @@ button {
 
 .meu-cafe__informacoes div > span::before {
   content: "";
-  width: 75px;
-  height: 66px;
+  width: 100px;
+  height: 100px;
 }
 
-.meu-cafe__informacoes-icone__lupa::before {
-  background-image: url("../img/icones/coracao.svg");
+.meu-cafe__informacoes-icone__potecafe::before {
+  background-image: url("../img/icones/potecafe.svg");
 }
-.meu-cafe__informacoes-icone__carteira::before {
-  background-image: url("../img/icones/preco.svg");
-}
-.meu-cafe__informacoes-icone__cafe::before {
+
+.meu-cafe__informacoes-icone__xicaracafe::before {
   background-image: url("../img/icones/xicaracafe.svg");
 }
-.meu-cafe__informacoes-icone__numero::before {
-  background-image: url("../img/icones/numeroum.svg");
+
+.meu-cafe__informacoes-icone__maquina::before {
+  background-image: url("../img/icones/maquina.svg");
+}
+
+.meu-cafe__informacoes-icone__dinheiro::before {
+  background-image: url("../img/icones/dinheirocafe.svg");
+}
+
+.meu-cafe__informacoes-icone__pote::before {
+  background-image: url("../img/icones/pote.svg");
+}
+
+.meu-cafe__informacoes-icone__copo::before {
+  background-image: url("../img/icones/copodecafe.svg");
 }
 
 .meu-cafe__informacoes-cafe {
@@ -443,71 +449,143 @@ button {
 
 /* Seção 3 menu */
 
-.menu-precos {
+.sobre-cafe__descricao {
   display: grid;
   grid-template-areas:
-    "nome nome nome"
-    "imagemum menucafe imagemdois"
-    "menucappuccino imagemtres menuexpresso";
-  grid-auto-columns: 1fr;
+    "menucafe imagemdois menucappuccino"
+    "imagemtres menuexpresso imagemum";
+  grid-auto-columns: 2fr;
   width: 100%;
   padding: 0 var(--padding5735);
-  gap: var(--gap-3);
 }
 
-.menu picture {
+.sobre-cafe__imagem {
   display: flex;
   justify-content: center;
+  height: 70%;
 }
 
-.menu-precos__imagem:nth-of-type(1) {
+.sobre-cafe__imagem {
+  margin: 0 auto;
+}
+
+.sobre-cafe__informacoes:nth-of-type(1) {
+  grid-area: menucafe;
+  width: 100%;
+}
+
+.sobre-cafe__informacoes:nth-of-type(2) {
+  grid-area: menucappuccino;
+}
+
+.sobre-cafe__informacoes:nth-of-type(3) {
+  grid-area: menuexpresso;
+}
+
+.sobre-cafe__imagem:nth-of-type(1) {
   grid-area: imagemum;
 }
-.menu-precos__imagem:nth-of-type(2) {
+
+.sobre-cafe__imagem:nth-of-type(2) {
   grid-area: imagemdois;
 }
-.menu-precos__imagem:nth-of-type(3) {
-  grid-area: imagetres;
+
+.sobre-cafe__imagem:nth-of-type(3) {
+  grid-area: imagemtres;
 }
 
-.menu-precos h2 {
+.sobre-cafe h2 {
   grid-area: nome;
-  font-size: 2rem;
+  font-size: 3rem;
+  margin: 0 auto;
+  padding-bottom: 1.5em;
+  padding-left: 2em;
 }
 
-.menu h3 {
-  font-weight: 800;
-  font-size: 32px;
-  line-height: 35px;
+.sobre-cafe h3 {
+  font-weight: var(--font-w800);
+  font-size: 3rem;
   letter-spacing: 0.16em;
 }
 
-.menu-precos__informacoes-total p {
-  font-weight: var(--font-w300);
-  color: hsl(0, 0%, 73%);
-}
-
-.menu-precos__informacoes-total span {
-  font-weight: var(--font-w500);
-  color: var(--secundaria-600);
-}
-
-.menu-precos__informacoes,
-.menu-precos__informacoes-total div {
+.sobre-cafe__informacoes {
   display: flex;
-}
-
-.menu-precos__informacoes {
   flex-direction: column;
   align-items: center;
   gap: var(--gap-1);
-  padding: 0 5em;
+  padding: 0 3em;
 }
 
-.menu-precos__informacoes-total {
-  width: 100%;
+@media (max-width: 1245px) {
+  .sobre-cafe__descricao {
+    grid-template-areas:
+      "menucafe menucappuccino menuexpresso"
+      "imagemtres imagemdois imagemum";
+    padding: 0 2em;
+  }
+
+  .meu-cafe__informacoes {
+    grid-template-areas:
+      "cafegelado cafegelado maquina maquina"
+      "sacocafe sacocafe potecafe potecafe"
+      "cappuccino cappuccino moedora moedora"
+      "copo copo copo copo";
+  }
+
+  .meu-cafe__copo {
+    height: 100%;
+  }
+
+  .meu-cafe__copo img {
+    width: 100%;
+  }
 }
 
-.menu-precos__informacoes-total div {
-  justify-content: space-between;
+@media (max-width: 1130px) {
+  .sobre-cafe__descricao {
+    grid-template-areas:
+      "menucafe imagemtres"
+      "menucappuccino imagemdois"
+      "menuexpresso imagemum";
+  }
+}
+
+@media (max-width: 1004px) {
+  .sobre-nos__descricao {
+    width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  .sobre-cafe__descricao {
+    grid-template-areas:
+      "menucafe menucafe"
+      "imagemtres imagemtres"
+      "menucappuccino menucappuccino"
+      "imagemdois imagemdois"
+      "menuexpresso menuexpresso"
+      "imagemum imagemum";
+  }
+
+  .sobre-cafe__imagem {
+    margin-top: 2em;
+    height: 80%;
+  }
+
+  .meu-cafe__informacoes {
+    grid-template-areas:
+      "sacocafe sacocafe sacocafe"
+      "cappuccino cappuccino cappuccino"
+      "moedora moedora moedora"
+      "copo copo copo"
+      "maquina maquina maquina"
+      "potecafe potecafe potecafe"
+      "cafegelado cafegelado cafegelado";
+  }
+
+  .meu-cafe__copo {
+    width: 250px;
+    height: 100%;
+    margin: 0 auto;
+  }
 }
