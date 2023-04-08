@@ -85,7 +85,6 @@ button:is(:active, :hover) {
 
 .cabecalho {
   width: 100%;
-  height: 100%;
 }
 
 .cabecalho {
@@ -212,7 +211,7 @@ button:is(:active, :hover) {
   flex-direction: column;
   align-items: center;
   color: var(--white-900);
-  gap: var(--gap-15);
+  gap: 4.15rem;
 }
 
 .cabecalho-informacoes__gerais {
@@ -272,7 +271,6 @@ button:is(:active, :hover) {
   left: 0;
   display: inline-flex;
   align-items: center;
-  padding-left: 0.5em;
 }
 
 .cabecalho-lista__icone::before {
@@ -780,6 +778,10 @@ label {
   .meu-cafe__copo img {
     width: 60%;
   }
+
+  .meu-cafe__informacoes-nomeprincipal {
+    margin: 1em 0;
+  }
 }
 
 @media (max-width: 1130px) {
@@ -794,6 +796,8 @@ label {
 @media (max-width: 1008px) {
   .sobre-nos__descricao {
     width: 100%;
+    order: -1;
+    margin-top: 4em;
   }
 
   .footer__links:nth-of-type(2) {
@@ -801,6 +805,62 @@ label {
     margin-top: 2em;
   }
 
+  .cabecalho-lista {
+    gap: 2rem;
+  }
+
+  .cabecalho-navegacao {
+    position: relative;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    top: 1em;
+    right: 4.256em;
+  }
+
+  .hamburguer__icon {
+    display: inline-flex;
+    cursor: pointer;
+  }
+
+  .hamburguer__icon::before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-image: url("/img/icones/hamburguer.svg");
+  }
+
+  .cabecalho-lista {
+    position: absolute;
+    top: 4em;
+    right: 0;
+    clip-path: circle(0px at top right);
+    transition: clip-path ease-in-out 400ms;
+    padding: 1em;
+    align-items: flex-start;
+    border-radius: 0.5em;
+    background-color: var(--primaria-700);
+    flex-direction: column;
+  }
+
+  .cabecalho-lista__procurar {
+    order: 1;
+    border: 1px solid var(--white-900);
+    padding: 0.5em;
+    border-radius: 0.5em;
+  }
+
+  .cabecalho-lista__links {
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    order: 2;
+  }
+
+  .cabecalho-lista__nome-principal {
+    order: 3;
+  }
 }
 
 @media (max-width: 850px) {
@@ -845,5 +905,28 @@ label {
 
   .cabecalho-descricao {
     width: 100%;
+  }
+}
+
+/* Abrir */
+
+.open {
+  clip-path: circle(150% at top right);
+}
+
+/* Fechar */
+
+.close::before {
+  background-image: url("/img/icones/close.svg");
+  transition: background 0.5s ease;
+  animation: rotateicon 0.5s ease;
+}
+
+@keyframes rotateicon {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
