@@ -6,13 +6,13 @@
 
 :root {
   --primaria-700: #2f1b04;
-  --secundaria-600: hsl(36, 92%, 70%);
+  --secundaria-600: hsl(32, 50%, 55%);
 
   --secundaria-300: hsl(34, 100%, 92%);
   --secundaria-100: hsl(32, 100%, 97%);
   --secundaria-50: hsl(32, 100%, 9%);
 
-  --secundaria-hover: hsl(36, 92%, 60%);
+  --secundaria-hover: hsl(32, 38%, 45%);
 
   --white-900: hsl(100, 100%, 100%);
   --gray-50: hsl(0, 0%, 97%);
@@ -55,26 +55,30 @@ body {
   font-family: var(--font-family-os);
   font-size: 1rem;
   background-image: url("../img/images/background.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
+}
+
+main {
+  margin: 0;
 }
 
 main > * {
   margin: 4rem 0;
 }
 
+
 button {
-  padding: var(--padding-05) var(--padding-05);
+  padding: var(--padding-05) var(--padding-075);
   background-color: var(--secundaria-600);
-  color: var(--black-700);
+  color: var(--white-900);
   border: none;
   border-radius: 0.5em;
-  font-weight: var(--font-w800);
+  font-weight: var(--font-w100);
   font-size: 1rem;
   cursor: pointer;
 }
 
-.cabecalho,
-.cabecalho-gradiente {
+.cabecalho {
   width: 100%;
   height: 100%;
 }
@@ -194,7 +198,6 @@ button {
 }
 
 .cabecalho-informacoes,
-.cabecalho-informacoes__gerais,
 .cabecalho-lista__procurar label {
   display: flex;
 }
@@ -207,7 +210,11 @@ button {
 }
 
 .cabecalho-informacoes__gerais {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: var(--gap-3);
+  justify-self: center;
+  width: 100%;
 }
 
 .cabecalho-informacoes__gerais > * {
@@ -405,8 +412,13 @@ button {
 }
 
 .meu-cafe__informacoes div h3 {
-  font-weight: var(--font-w800);
+  font-weight: var(--font-w500);
   font-size: 1.75rem;
+}
+
+.meu-cafe__informacoes p {
+  font-weight: var(--font-w100);
+  color: var(--gray-400);
 }
 
 .meu-cafe__informacoes div > span {
@@ -448,6 +460,10 @@ button {
 }
 
 /* Seção 3 menu */
+
+.sobre-cafe {
+  display: grid;
+}
 
 .sobre-cafe__descricao {
   display: grid;
@@ -495,16 +511,14 @@ button {
 }
 
 .sobre-cafe h2 {
-  grid-area: nome;
   font-size: 3rem;
-  margin: 0 auto;
   padding-bottom: 1.5em;
-  padding-left: 2em;
+  margin: 0 auto;
 }
 
 .sobre-cafe h3 {
-  font-weight: var(--font-w800);
-  font-size: 3rem;
+  font-weight: var(--font-w500);
+  font-size: 2.5rem;
   letter-spacing: 0.16em;
 }
 
@@ -515,6 +529,51 @@ button {
   gap: var(--gap-1);
   padding: 0 3em;
 }
+
+/* Seção 4 */
+
+.marcas-logo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  justify-items: center;
+  row-gap: var(--gap-3);
+}
+
+.marcas-logo > span {
+  display: inline-flex;
+}
+
+.marcas-logo > span::before {
+  content: "";
+  width: 120px;
+}
+
+.marcas-logo__brothers::before {
+  background-image: url("../img/marcas/brothers.svg");
+  height: 56px;
+}
+
+.marcas-logo__dunkin::before {
+  background-image: url("../img/marcas/Dunkin_logo.svg");
+  height: 22px;
+}
+
+.marcas-logo__krispy::before {
+  background-image: url("../img/marcas/krispy.svg");
+  height: 42px;
+}
+
+.marcas-logo__mccafe::before {
+  background-image: url("../img/marcas/mccafe.svg");
+  height: 49px;
+}
+
+.marcas-logo__biggby::before {
+  background-image: url("../img/marcas/biggby.svg");
+  height: 40px;
+}
+
+/*  */
 
 @media (max-width: 1245px) {
   .sobre-cafe__descricao {
@@ -537,7 +596,7 @@ button {
   }
 
   .meu-cafe__copo img {
-    width: 100%;
+    width: 60%;
   }
 }
 
