@@ -7,7 +7,6 @@
 :root {
   --primaria-700: #2f1b04;
   --secundaria-600: hsl(32, 50%, 55%);
-
   --secundaria-300: hsl(34, 100%, 92%);
   --secundaria-100: hsl(32, 100%, 97%);
   --secundaria-50: hsl(32, 100%, 9%);
@@ -15,9 +14,11 @@
   --secundaria-hover: hsl(32, 38%, 45%);
 
   --white-900: hsl(100, 100%, 100%);
+
   --gray-50: hsl(0, 0%, 97%);
   --gray-100: hsl(0, 0%, 74%);
   --gray-400: hsl(0, 0%, 44%);
+
   --black-700: hsl(0, 0%, 12%);
 
   --font-w100: 100;
@@ -56,6 +57,7 @@ body {
   font-size: 1rem;
   background-image: url("../img/images/background.png");
   background-repeat: repeat;
+  background-position: top;
 }
 
 main {
@@ -63,7 +65,7 @@ main {
 }
 
 main > * {
-  margin: 4rem 0;
+  margin: 6rem 0;
 }
 
 button {
@@ -531,7 +533,6 @@ button:is(:active, :hover) {
   flex-direction: column;
   align-items: center;
   gap: var(--gap-1);
-  padding: 0 3em;
 }
 
 /* Seção 4 */
@@ -585,6 +586,7 @@ footer {
   background-color: var(--primaria-700);
   color: var(--white-900);
   background-image: url("../img/images/background2.png");
+  background-repeat: no-repeat;
 }
 
 .footer {
@@ -746,6 +748,54 @@ label {
   justify-content: space-between;
   color: var(--white900);
   padding: 2em 0 0 0;
+  flex-wrap: wrap;
+  gap: var(--gap-2);
+  align-items: center;
+}
+
+.redes-sociais__icons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  justify-content: space-between;
+}
+
+.redes-sociais__icons > * {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  background-color: var(--gray-100);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.redes-sociais__icons > *:hover {
+  transform: scale(0.9);
+  background-color: var(--secundaria-hover);
+}
+
+.redes-sociais__icons > *::before {
+  content: "";
+  width: 32px;
+  height: 32px;
+}
+
+.redes-sociais__icons-facebook::before {
+  background-image: url("../img/icones/facebook.svg");
+}
+
+.redes-sociais__icons-insta::before {
+  background-image: url("../img/icones/instagram.svg");
+}
+
+.redes-sociais__icons-whatsapp::before {
+  background-image: url("../img/icones/whatsapp.svg");
+}
+
+.redes-sociais__icons-linkedin::before {
+  background-image: url("../img/icones/linkedin.svg");
 }
 
 @media (max-width: 1288px) {
@@ -828,7 +878,7 @@ label {
     content: "";
     width: 32px;
     height: 32px;
-    background-image: url("/img/icones/hamburguer.svg");
+    background-image: url("../img/icones/hamburguer.svg");
   }
 
   .cabecalho-lista {
@@ -849,6 +899,10 @@ label {
     border: 1px solid var(--white-900);
     padding: 0.5em;
     border-radius: 0.5em;
+  }
+
+  .cabecalho-lista__procurar button {
+    padding: 0.5em 0.85em;
   }
 
   .cabecalho-lista__links {
@@ -891,7 +945,7 @@ label {
   }
 
   .meu-cafe__copo {
-    width: 250px;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
   }
