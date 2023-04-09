@@ -580,6 +580,16 @@ button:is(:active, :hover) {
   height: 40px;
 }
 
+/* Mapa */
+
+.mapa-principal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 4em;
+}
+
 /* footer */
 
 footer {
@@ -766,7 +776,7 @@ label {
   display: inline-flex;
   width: 48px;
   height: 48px;
-  background-color: var(--gray-100);
+  background-color: var(--secundaria-hover);
   border-radius: 50%;
   align-items: center;
   justify-content: center;
@@ -775,7 +785,7 @@ label {
 
 .redes-sociais__icons > *:hover {
   transform: scale(0.9);
-  background-color: var(--secundaria-hover);
+  background-color: var(--secundaria-600);
 }
 
 .redes-sociais__icons > *::before {
@@ -799,6 +809,8 @@ label {
 .redes-sociais__icons-linkedin::before {
   background-image: url("../img/icones/linkedin.svg");
 }
+
+/* Responsivo */
 
 @media (max-width: 1288px) {
   .footer__links:nth-of-type(3) {
@@ -995,3 +1007,16 @@ label {
     transform: rotate(0deg);
   }
 }
+
+/* Animação opacity */
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.visivel {
+  opacity: 1;
+}
+
+
