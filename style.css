@@ -70,7 +70,7 @@ button {
   color: var(--branco-900);
   border: none;
   border-radius: 0.5em;
-  font-weight: var(--font-w100);
+  font-weight: var(--font-w400);
   font-size: 1rem;
   cursor: pointer;
 }
