@@ -30,15 +30,11 @@ window.addEventListener("scroll", () => {
 // função auxiliar para verificar se um elemento está na janela visível
 const elementoNaViewPort = (el) => {
   const rect = el.getBoundingClientRect();
-  const offset = 450; // ajuste o valor do offset conforme necessário
-  if (window.innerWidth < 1236) {
-    return;
-  }
+  const offset = 350; // ajuste o valor do offset conforme necessário
   return (
     rect.top >= 0 - offset &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) + offset &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    rect.bottom <= window.innerHeight + offset &&
+    rect.right <= window.innerWidth
   );
 };
+

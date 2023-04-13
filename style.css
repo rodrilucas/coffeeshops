@@ -1093,6 +1093,7 @@ label {
     grid-template-areas:
       "menucafe menucappuccino menuexpresso"
       "imagemtres imagemdois imagemum";
+    gap: var(--gap-3);
     padding: 0 2em;
   }
 
