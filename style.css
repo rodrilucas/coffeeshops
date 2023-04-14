@@ -1278,6 +1278,17 @@ label {
   }
 }
 
+@media (max-width: 469px) {
+  .meu-cafe__informacoes div {
+    flex-wrap: wrap;
+  }
+
+  .cabecalho-informacoes__gerais {
+    font-size: 0.75rem;
+    padding: 0;
+  }
+}
+
 /* Abrir */
 
 .open {
