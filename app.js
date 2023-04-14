@@ -12,29 +12,34 @@ function open() {
 
 abrir.addEventListener("click", open);
 
-// selecione todos os elementos com a classe 'fade-in'
-const secaoEscondida = document.querySelectorAll(".fade-in");
+// seletor para todos os elementos .fade-in
+const elementos = document.querySelectorAll('.fade-in');
 
-// adicione um evento de rolagem ao objeto window
-window.addEventListener("scroll", () => {
-  // para cada elemento com a classe 'fade-in'
-  secaoEscondida.forEach((secoes) => {
-    // verifique se o elemento está na janela visível
-    if (elementoNaViewPort(secoes)) {
-      // adicione a classe 'visible' para iniciar a animação
-      secoes.classList.add("visivel");
+// função para verificar se um elemento está na janela visível
+const elementoNaViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+  const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+  return (
+    (rect.top <= windowHeight * 0.4) // o elemento está 90% na janela visível
+  );
+};
+
+// função para remover a classe de margem superior negativa e adicionar a classe de margem superior positiva
+const removerMargemSuperiorNegativa = (el) => {
+  el.classList.remove('fade-in');
+  el.classList.add('fade-in-done');
+};
+
+// adicionar evento de scroll aos elementos .fade-in
+elementos.forEach((el) => {
+  window.addEventListener('scroll', () => {
+    if (elementoNaViewport(el)) {
+      el.classList.add('visivel');
+      setTimeout(() => {
+        removerMargemSuperiorNegativa(el);
+      }, 600); // tempo de espera para remover a margem superior negativa depois que a animação terminar
     }
   });
 });
 
-// função auxiliar para verificar se um elemento está na janela visível
-const elementoNaViewPort = (el) => {
-  const rect = el.getBoundingClientRect();
-  const offset = 350; // ajuste o valor do offset conforme necessário
-  return (
-    rect.top >= 0 - offset &&
-    rect.bottom <= window.innerHeight + offset &&
-    rect.right <= window.innerWidth
-  );
-};
 
