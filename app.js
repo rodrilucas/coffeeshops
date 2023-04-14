@@ -1,16 +1,16 @@
-const abrir = document.querySelector(".hamburguer__icon");
-const cabecalho = document.querySelector(".cabecalho-lista");
+const abrirMenuHamburguer = document.querySelector(".hamburguer__icon");
+const itensNavegacaoCabecalho = document.querySelector(".cabecalho-lista");
 
 function open() {
-  cabecalho.classList.toggle("open");
+  itensNavegacaoCabecalho.classList.toggle("open");
   if (cabecalho.classList.contains("open")) {
-    abrir.classList.add("close");
+    abrirMenuHamburguer.classList.add("close");
   } else {
-    abrir.classList.remove("close");
+    abrirMenuHamburguer.classList.remove("close");
   }
 }
 
-abrir.addEventListener("click", open);
+abrirMenuHamburguer.addEventListener("click", open);
 
 // seletor para todos os elementos .fade-in
 const elementos = document.querySelectorAll('.fade-in');
@@ -22,12 +22,6 @@ const elementoNaViewport = (el) => {
   return (
     (rect.top <= windowHeight * 0.4) // o elemento está 90% na janela visível
   );
-};
-
-// função para remover a classe de margem superior negativa e adicionar a classe de margem superior positiva
-const removerMargemSuperiorNegativa = (el) => {
-  el.classList.remove('fade-in');
-  el.classList.add('fade-in-done');
 };
 
 // adicionar evento de scroll aos elementos .fade-in
