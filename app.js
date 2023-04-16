@@ -20,7 +20,7 @@ const elementoNaViewport = (el) => {
   const rect = el.getBoundingClientRect();
   const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
   return (
-    (rect.top <= windowHeight * 0.4) // o elemento está 90% na janela visível
+    (rect.top <= windowHeight * 0.4) // o elemento está 40% na janela visível
   );
 };
 
