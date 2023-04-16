@@ -29,9 +29,6 @@ elementos.forEach((el) => {
   window.addEventListener('scroll', () => {
     if (elementoNaViewport(el)) {
       el.classList.add('visivel');
-      setTimeout(() => {
-        removerMargemSuperiorNegativa(el);
-      }, 600); // tempo de espera para remover a margem superior negativa depois que a animação terminar
     }
   });
 });
